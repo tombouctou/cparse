@@ -16,7 +16,7 @@ $(EXE): $(OBJ); $(CXX) $(CFLAGS) $(DEBUG) $(OBJ) -o $(EXE)
 
 release: $(CORE_SRC) builtin-features.cpp;
 	$(CXX) -c -O3 $(CFLAGS) builtin-features.cpp
-	$(LD) -r -O1 $(CORE_SRC:.cpp=.o) -o core-shunting-yard.o
+	$(LD) -r $(CORE_SRC:.cpp=.o) -o core-shunting-yard.o
 
 again: clean all
 
