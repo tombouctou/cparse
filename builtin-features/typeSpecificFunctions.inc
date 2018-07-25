@@ -45,7 +45,7 @@ packToken default_instanceof(TokenMap scope) {
   return false;
 }
 
-/* * * * * LIST Type built-in functions * * * * */
+/* * * * * CPT_LIST Type built-in functions * * * * */
 
 const args_t push_args = {"item"};
 packToken list_push(TokenMap scope) {
@@ -166,7 +166,7 @@ packToken string_split(TokenMap scope) {
 
 struct Startup {
   Startup() {
-    TokenMap& base_list = calculator::type_attribute_map()[LIST];
+    TokenMap& base_list = calculator::type_attribute_map()[CPT_LIST];
     base_list["push"] = CppFunction(list_push, push_args, "push");
     base_list["pop"] = CppFunction(list_pop, list_pop_args, "pop");
     base_list["len"] = CppFunction(list_len, "len");

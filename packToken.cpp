@@ -157,7 +157,7 @@ TokenMap& packToken::asMap() const {
 }
 
 TokenList& packToken::asList() const {
-  if (base->type != LIST) {
+  if (base->type != CPT_LIST) {
     throw bad_cast(
       "The Token is not a list!");
   }
@@ -278,7 +278,7 @@ std::string packToken::str(const TokenBase* base, uint32_t nest) {
       }
       ss << " }";
       return ss.str();
-    case LIST:
+    case CPT_LIST:
       if (nest == 0) return "[List]";
       tlist = &(static_cast<const TokenList*>(base)->list());
       if (tlist->size() == 0) return "[]";

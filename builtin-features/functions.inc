@@ -32,7 +32,7 @@ packToken default_sum(TokenMap scope) {
   // Get the arguments:
   TokenList list = scope["args"].asList();
 
-  if (list.list().size() == 1 && list.list().front()->type == LIST) {
+  if (list.list().size() == 1 && list.list().front()->type == CPT_LIST) {
     list = list.list().front().asList();
   }
 
@@ -108,7 +108,7 @@ packToken default_type(TokenMap scope) {
   case IT: return "iterable";
   case TUPLE: return "tuple";
   case STUPLE: return "argument tuple";
-  case LIST: return "list";
+  case CPT_LIST: return "list";
   case MAP:
     p_type = tok.asMap().find("__type__");
     if (p_type && (*p_type)->type == STR) {

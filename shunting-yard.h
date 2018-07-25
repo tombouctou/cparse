@@ -37,7 +37,7 @@ enum tokType {
 
   // Complex types:
   IT = 0x40,      // Everything with the bit 0x40 set are iterators.
-  LIST = 0x41,    // == 0x40 + 0x01 => Lists are iterators.
+  CPT_LIST = 0x41,    // == 0x40 + 0x01 => Lists are iterators.
   TUPLE = 0x42,   // == 0x40 + 0x02 => Tuples are iterators.
   STUPLE = 0x43,  // == 0x40 + 0x03 => ArgTuples are iterators.
   MAP = 0x44,     // == 0x40 + 0x04 => Maps are Iterators

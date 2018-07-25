@@ -33,7 +33,7 @@ packToken Assign(const packToken& left, const packToken& right, evaluationData* 
     }
   // If the left operand has an index number:
   } else if (key->type & NUM) {
-    if (origin->type == LIST) {
+    if (origin->type == CPT_LIST) {
       TokenList& list = origin.asList();
       size_t index = key.asInt();
       list[index] = right;
@@ -362,8 +362,8 @@ struct Startup {
     opMap.add({STR, ANY_OP, STR}, &StringOnStringOperation);
     opMap.add({STR, ANY_OP, NUM}, &StringOnNumberOperation);
     opMap.add({NUM, ANY_OP, STR}, &NumberOnStringOperation);
-    opMap.add({LIST, ANY_OP, NUM}, &ListOnNumberOperation);
-    opMap.add({LIST, ANY_OP, LIST}, &ListOnListOperation);
+    opMap.add({CPT_LIST, ANY_OP, NUM}, &ListOnNumberOperation);
+    opMap.add({CPT_LIST, ANY_OP, CPT_LIST}, &ListOnListOperation);
   }
 } __CPARSE_STARTUP;
 

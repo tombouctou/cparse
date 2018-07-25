@@ -363,7 +363,7 @@ TEST_CASE("List and map constructors usage") {
   REQUIRE_NOTHROW(calculator::calculate("my_list = list()", vars));
 
   REQUIRE(vars["my_map"]->type == MAP);
-  REQUIRE(vars["my_list"]->type == LIST);
+  REQUIRE(vars["my_list"]->type == CPT_LIST);
   REQUIRE(calculator::calculate("my_list.len()", vars).asDouble() == 0);
 
   REQUIRE_NOTHROW(calculator::calculate("my_list = list(1,'2',None,map(),list('sub_list'))", vars));

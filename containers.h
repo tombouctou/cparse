@@ -159,7 +159,7 @@ struct TokenList : public Container<TokenList_t>, public Iterable {
   }
 
  public:
-  TokenList() { this->type = LIST; }
+  TokenList() { this->type = CPT_LIST; }
   virtual ~TokenList() {}
 
   packToken& operator[](const uint64_t idx) const {
