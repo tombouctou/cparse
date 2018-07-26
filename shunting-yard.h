@@ -239,12 +239,12 @@ struct parserMap_t {
   rCharMap_t cmap;
 
   // Add reserved word:
-  void add(const std::string& word, const rWordParser_t* parser) {
+  void add(const std::string& word, rWordParser_t* parser) {
     wmap[word] = parser;
   }
 
   // Add reserved character:
-  void add(char c, const rWordParser_t* parser) {
+  void add(char c, rWordParser_t* parser) {
     cmap[c] = parser;
   }
 
