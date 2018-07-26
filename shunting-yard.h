@@ -144,8 +144,8 @@ class OppMap_t {
   bool exists(const std::string& op) const { return pr_map.count(op); }
 };
 
-class TokenMap;
-class TokenList;
+struct TokenMap;
+struct TokenList;
 class Tuple;
 class STuple;
 class Function;
@@ -211,7 +211,7 @@ struct rpnBuilder {
 };
 
 class RefToken;
-class opMap_t;
+struct opMap_t;
 struct evaluationData {
   TokenQueue_t rpn;
   TokenMap scope;
